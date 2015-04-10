@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo apt-get update
 sudo apt-get install -y git-core
 sudo apt-get install -y curl
 
@@ -22,7 +23,7 @@ sudo apt-get install -y rlwrap
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
-sudo apt-get install -y python-software-properties
+sudo apt-get install -y --fix-missing python-software-properties
 sudo add-apt-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
