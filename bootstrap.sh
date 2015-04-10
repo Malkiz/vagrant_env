@@ -32,10 +32,15 @@ sudo apt-get install -y screen
 
 # get dotfiles
 cd $HOME
+if [ -d ./dotfiles/ ]; then
+    mv dotfiles dotfiles.old
+fi
+if [ -d .emacs.d/ ]; then
+    mv .emacs.d .emacs.d~
+fi
 git clone https://github.com/Malkiz/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
-#mv .emacs.d .emacs.d~
-ln -s dotfiles/.emacs.d .
+ln -sf dotfiles/.emacs.d .
