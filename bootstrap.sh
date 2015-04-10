@@ -27,3 +27,15 @@ sudo add-apt-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
+# Install screen
+sudo apt-get install -y screen
+
+# get dotfiles
+cd $HOME
+git clone https://github.com/Malkiz/dotfiles.git
+ln -sb dotfiles/.screenrc .
+ln -sb dotfiles/.bash_profile .
+ln -sb dotfiles/.bashrc .
+ln -sb dotfiles/.bashrc_custom .
+#mv .emacs.d .emacs.d~
+ln -s dotfiles/.emacs.d .
