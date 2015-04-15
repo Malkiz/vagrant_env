@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd $HOME
-cp /vagrant/setup.sh .
+tr -d '\r' < /vagrant/setup.sh > setup.sh
 chmod +x setup.sh
 export SETUP_FILENAME="bootstrap.sh"
 ./setup.sh

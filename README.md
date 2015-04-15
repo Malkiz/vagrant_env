@@ -2,4 +2,8 @@ install vagrant
 
 then use `vagrant up` to set up the machine and `vagrant ssh` to log in.
 
-use `vagrant reload --provision` to rerun the init script if it is updated.
+then run:
+
+tr -d '\r' < /vagrant/run_setup.sh > run_setup.sh
+chmod +x run_setup.sh
+./run_setup.sh
