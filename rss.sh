@@ -2,12 +2,15 @@
 
 sudo apt-get update
 sudo apt-get install -y git-core
-sudo apt-get install -y php5-cli php5-sqlite php5-xmlrpc
-sudo apt-get install -y apache2
+sudo apt-get install -y php5 php5-cli php5-sqlite php5-xmlrpc
+sudo apt-get install -y apache2 libapache2-mod-php5
 
 # get miniflux
 cd $HOME
 git clone https://github.com/Malkiz/miniflux.git
+
+# set write permission for app to work
+sudo chmod a+w -R miniflux/data/
 
 # direct apache default location to miniflux
 export APACHE_SITE_FILE="/etc/apache2/sites-available/default"
